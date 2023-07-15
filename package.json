@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sarifmiaa/capacitor-device-locale.git"
+    "url": "https://github.com/sarifmiaa/capacitor-device-locale.git"
   },
   "bugs": {
     "url": "https://github.com/sarifmiaa/capacitor-device-locale/issues"
