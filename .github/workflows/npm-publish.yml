@@ -31,6 +31,9 @@ jobs:
         run: echo "::set-output name=tag::$(echo ${GITHUB_REF#refs/tags/})"
       - name: Update package.json
         run: |
+          git config user.name "Sarif Mia"
+          git config user.email "sarif.mia02@gmail.com"
+          
           npm version ${{ steps.release_tag.outputs.tag }}
           npm install
       - name: Commit and push updated package.json
