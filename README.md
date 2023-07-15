@@ -1,6 +1,12 @@
-# capacitor-device-locale
+<p align="center"><br><img src="https://avatars.githubusercontent.com/u/63735538" width="128" height="128" /></p>
+<h3 align="center">Capacitor Device Locale</h3>
+<p align="center">
+  Capacitor plugin for getting native device locale
+</p>
 
-Get device locale information
+## Introduction
+
+The Capacitor Device Locale package is a comprehensive solution that enables developers to effortlessly obtain the device locale information from both iOS and Android platforms. With its robust capabilities, this package simplifies the process of retrieving locale data. By integrating this package into your application, you can efficiently access and utilize device-specific locale information.
 
 ## Install
 
@@ -14,7 +20,7 @@ npx cap sync
 <docgen-index>
 
 * [`getDeviceLocale()`](#getdevicelocale)
-* [Interfaces](#interfaces)
+* [`DeviceLocale`](#DeviceLocale)
 
 </docgen-index>
 
@@ -51,5 +57,24 @@ Get the device locale.
 | **`currencyCode`**   | <code>string</code> | The currency code of the device locale. Example: "USD"              |
 | **`currencyName`**   | <code>string</code> | The name of the currency in the device locale. Example: "US Dollar" |
 | **`timezone`**       | <code>string</code> | The timezone of the device locale. Example: "America/New_York"      |
+
+### Usage
+
+```
+import { getDeviceLocale, DeviceLocale } from 'capacitor-device-locale';
+
+async function getDeviceLocaleInformation() {
+  try {
+    const deviceLocale: DeviceLocale = await getDeviceLocale();
+    console.log('Device Locale:', deviceLocale);
+    // Perform operations with the device locale
+  } catch (error) {
+    console.error('Error retrieving device locale:', error);
+    // Handle error
+  }
+}
+
+getDeviceLocaleInformation();
+```
 
 </docgen-api>
