@@ -1,6 +1,6 @@
 #This workflow will build the package using node and then verify the build when a release is created
 
-name: npm
+name: build
 
 on:
   release:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   verify-build:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
