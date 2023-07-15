@@ -35,7 +35,11 @@ jobs:
           git config user.email "sarif.mia02@gmail.com"
 
           npm version patch --save
-          npm install
+      - name: Push changes and tags
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          force_tags: true
       - run: npm ci
       - run: npm publish
         env:
