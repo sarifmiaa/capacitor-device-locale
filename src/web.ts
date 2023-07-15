@@ -1,10 +1,9 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { DeviceLocalePlugin } from './definitions';
+import type { DeviceLocale, DeviceLocalePlugin } from './definitions';
 
 export class DeviceLocaleWeb extends WebPlugin implements DeviceLocalePlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  getDeviceLocale(): Promise<DeviceLocale> {
+    throw new Error('Method not supported on web.');
   }
 }

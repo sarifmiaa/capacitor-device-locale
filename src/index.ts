@@ -2,9 +2,7 @@ import { registerPlugin } from '@capacitor/core';
 
 import type { DeviceLocalePlugin } from './definitions';
 
-const DeviceLocale = registerPlugin<DeviceLocalePlugin>('DeviceLocale', {
-  web: () => import('./web').then(m => new m.DeviceLocaleWeb()),
-});
+const Device = registerPlugin<DeviceLocalePlugin>('DeviceLocale', {});
 
 export * from './definitions';
-export { DeviceLocale };
+export { Device };

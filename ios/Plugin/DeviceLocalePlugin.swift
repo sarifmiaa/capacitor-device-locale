@@ -9,10 +9,28 @@ import Capacitor
 public class DeviceLocalePlugin: CAPPlugin {
     private let implementation = DeviceLocale()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    /**
+     * Get the device locale
+     */
+    @objc func getDeviceLocale(_ call: CAPPluginCall) {
+        let regionCode = implementation.getRegionCode() ?? ""
+        let country = implementation.getCountry() ?? ""
+        let languageCode = implementation.getLanguageCode() ?? ""
+        let language = implementation.getLanguage() ?? ""
+        let currencySymbol = implementation.getCurrencySymbol() ?? ""
+        let currencyCode = implementation.getCurrencyCode() ?? ""
+        let currencyName = implementation.getCurrencyName() ?? ""
+        let timeZone = implementation.getTimeZone() ?? ""
+        
         call.resolve([
-            "value": implementation.echo(value)
+            "regionCode": regionCode,
+            "country": country,
+            "languageCode": languageCode,
+            "language": language,
+            "currencySymbol": currencySymbol,
+            "currencyCode": currencyCode,
+            "currencyName": currencyName,
+            "timeZone": timeZone
         ])
     }
 }
