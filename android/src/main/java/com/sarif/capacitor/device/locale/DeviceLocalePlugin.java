@@ -11,12 +11,24 @@ public class DeviceLocalePlugin extends Plugin {
 
     private DeviceLocale implementation = new DeviceLocale();
 
+    /**
+     * Retrieves the device's locale information and returns it as a JSObject.
+     *
+     * @param call The plugin call object.
+     */
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    public void getDeviceLocale(PluginCall call) {
+        JSObject response = new JSObject();
+        
+        response.put("regionCode", implementation.getRegionCode());
+        response.put("country", implementation.getCountry());
+        response.put("languageCode", implementation.getLanguageCode());
+        response.put("language", implementation.getLanguage());
+        response.put("currencySymbol", implementation.getCurrencySymbol());
+        response.put("currencyCode", implementation.getCurrencyCode());
+        response.put("currencyName", implementation.getCurrencyName());
+        response.put("timeZone", implementation.getTimeZone());
 
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+        call.resolve(response);
     }
 }
