@@ -35,8 +35,8 @@ jobs:
           npm install
       - name: Commit and push updated package.json
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "Sarif Mia"
+          git config user.email "sarif.mia02@gmail.com"
           git add package.json
           git commit -m "Update package version"
           git push
