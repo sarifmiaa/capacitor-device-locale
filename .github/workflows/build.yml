@@ -1,0 +1,19 @@
+#This workflow will build the package using node and then verify the build when a release is created
+
+name: npm
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  verify-build:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm install
+      - run: npm run build
