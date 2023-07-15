@@ -34,7 +34,7 @@ jobs:
           git config user.name "Sarif Mia"
           git config user.email "sarif.mia02@gmail.com"
 
-          npm version
+          npm version patch --save
           npm install
       - run: npm ci
       - run: npm publish

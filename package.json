@@ -1,6 +1,6 @@
 {
   "name": "capacitor-device-locale",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Get device locale information",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
