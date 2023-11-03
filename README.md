@@ -61,11 +61,11 @@ Get the device locale.
 ### Usage
 
 ```
-import { getDeviceLocale, DeviceLocale } from 'capacitor-device-locale';
+import { Device } from 'capacitor-device-locale';
 
 async function getDeviceLocaleInformation() {
   try {
-    const deviceLocale: DeviceLocale = await getDeviceLocale();
+    const deviceLocale: DeviceLocale = await Device.getDeviceLocale();
     console.log('Device Locale:', deviceLocale);
     // Perform operations with the device locale
   } catch (error) {
